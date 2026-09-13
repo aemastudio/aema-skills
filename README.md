@@ -23,7 +23,7 @@ aema-drama-pipeline, aema-korean-srt, aema-blender를 모두 설치해줘.
 
 ```text
 $aema-drama-pipeline
-60초짜리 9:16 가족 갈등 숏드라마를 만들고 싶어.
+60초짜리 9:16 로맨틱 코미디 숏드라마를 만들고 싶어.
 먼저 대본과 제작 계획까지만 dry-run으로 만들어줘.
 ```
 
