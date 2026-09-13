@@ -32,7 +32,7 @@ For a newly cast recurring character, also record `casting` with:
 
 The combined character identity may become `locked` only after both selections exist. A later change from `1+E` to another combination creates a new immutable character version and stales dependent reference/video artifacts; it never overwrites the old lock.
 
-The first locked `reference_artifacts` entry for a cast character is the three-panel master sheet defined in [character-reference-sheet.md](character-reference-sheet.md). Record its role as `master-reference-3panel` and do not mark the character reference lock complete until that artifact passes layout and cross-panel consistency QC.
+The first locked `reference_artifacts` entry for a cast character is the `16:9` three-panel master sheet defined in [character-reference-sheet.md](character-reference-sheet.md). Record its role as `master-reference-3panel` and do not mark the character reference lock complete until that artifact passes layout and cross-panel consistency QC. This is an explicit exception to the project's default `9:16` delivery framing.
 
 ## Prompt package
 

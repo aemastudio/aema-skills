@@ -29,7 +29,7 @@ For every new recurring character without an already locked identity, casting is
 3. Plan one full-body contact sheet containing exactly five clearly separated body/silhouette candidates labeled `A`, `B`, `C`, `D`, `E`.
 4. Keep age range, presentation, ethnicity where specified, role, genre, and overall styling compatible across both boards. Vary facial identity only on the face board; vary body build, height impression, proportions, and silhouette only on the body board.
 5. Generate the two boards only after approval of their dry-run plan. Present both boards together and stop for a user selection such as `1+E`.
-6. Record the selected pair. Only then create the character's unified reference package using the chosen face and chosen body. The first locked deliverable is the mandatory three-panel master sheet in [references/character-reference-sheet.md](references/character-reference-sheet.md). Do not average candidates or silently change either selection.
+6. Record the selected pair. Only then create the character's unified reference package using the chosen face and chosen body. The first locked deliverable is the mandatory `16:9` three-panel master sheet in [references/character-reference-sheet.md](references/character-reference-sheet.md). Do not average candidates or silently change either selection.
 
 Do not continue to final character sheets, Elements registration, or video references while casting is unselected. If the user supplies an existing locked face and body reference or explicitly asks to retain a known character, record that provenance and skip candidate generation rather than recasting them.
 

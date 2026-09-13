@@ -1,14 +1,15 @@
 # AEMA Three-Panel Character Reference Sheet
 
-After the user selects a casting pair such as `1+E`, create exactly one master character-reference image with three fixed panels. This is the first locked character artifact and the source reference for later images, Elements, Blender, and video shots.
+After the user selects a casting pair such as `1+E`, create exactly one `16:9` landscape master character-reference image with three fixed panels. This is the first locked character artifact and the source reference for later images, Elements, Blender, and video shots. The project's delivery video may remain `9:16`; the master reference sheet itself is always `16:9`.
 
 ## Fixed left-to-right layout
 
-### Left — full body without a visible face
+### Left — front full body with head bowed
 
 - show the selected body and physique from head to toe;
-- use a neutral standing pose with arms and legs clearly readable;
-- keep the face hidden or not discernible so this panel evaluates body, proportions, silhouette, wardrobe fit, and footwear rather than facial identity;
+- use a neutral front-facing standing pose with arms and legs clearly readable;
+- bow the head deeply downward so the face is naturally obscured and difficult to identify;
+- do not turn the head away, cover it with hands or props, add a mask, blur the face, or crop the face out;
 - do not crop the head, hands, or feet; avoid props and gestures that obscure the body.
 
 ### Center — back view
@@ -31,13 +32,16 @@ All three panels depict one character version. Keep body, hair, wardrobe, palett
 
 Use a clean neutral background, consistent color management, no dramatic perspective, no environmental storytelling, no extra people, and no decorative collage elements. Separate panels cleanly. Do not put descriptive text over the character.
 
+The canvas aspect ratio is `16:9`, with three vertical panels arranged left to right. Keep enough horizontal width for the right face close-up while preserving uncropped full-body views in the left and center panels.
+
 ## Output and QC
 
 Use an immutable item ID such as `CHAR-001__master-reference-3panel__v001`. Store the casting selection (`1+E`), face-board hash, body-board hash, prompt/plan/run IDs, output hash, and selected status.
 
 Reject or propose a new approved take when:
 
-- the left panel exposes a conflicting or clearly different face;
+- the left panel does not show a deeply bowed head, or the face remains clearly identifiable;
+- the left panel hides the face by turning away, masking, blurring, covering, or cropping instead of bowing the head;
 - any head, hand, foot, hairstyle, garment, or accessory is cropped or missing;
 - the center is not a true back view;
 - the right close-up does not match the selected face;
