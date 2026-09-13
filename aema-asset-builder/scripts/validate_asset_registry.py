@@ -11,6 +11,7 @@ from pathlib import Path
 
 PREFIXES = {"characters": "CHAR-", "locations": "LOC-", "props": "PROP-"}
 VALID_STATUS = {"draft", "review", "locked", "retired"}
+VALID_CASTING_STATUS = {"planned", "generated", "selected", "locked"}
 
 
 def parse_args() -> argparse.Namespace:
@@ -60,6 +61,24 @@ def main() -> int:
             for field in ("name", "source_scenes", "identity_anchors", "allowed_variants", "reference_artifacts", "provenance"):
                 if field not in entry:
                     errors.append(f"{where} missing field: {field}")
+            if group == "characters" and "casting" in entry:
+                casting = entry["casting"]
+                if not isinstance(casting, dict):
+                    errors.append(f"{where}.casting must be an object")
+                    continue
+                if casting.get("status") not in VALID_CASTING_STATUS:
+                    errors.append(f"{where}.casting.status must be one of {sorted(VALID_CASTING_STATUS)}")
+                selected_face = casting.get("selected_face")
+                selected_body = casting.get("selected_body")
+                if selected_face is not None and selected_face not in {"1", "2", "3", "4", "5"}:
+                    errors.append(f"{where}.casting.selected_face must be 1-5")
+                if selected_body is not None and selected_body not in {"A", "B", "C", "D", "E"}:
+                    errors.append(f"{where}.casting.selected_body must be A-E")
+                combined = casting.get("selection")
+                if selected_face is not None and selected_body is not None and combined != f"{selected_face}+{selected_body}":
+                    errors.append(f"{where}.casting.selection must match selected_face+selected_body")
+                if casting.get("status") in {"selected", "locked"} and (selected_face is None or selected_body is None):
+                    errors.append(f"{where}.casting requires both selections when selected or locked")
 
     if errors:
         for error in errors:

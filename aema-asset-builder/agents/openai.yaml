@@ -1,4 +1,4 @@
 interface:
   display_name: "AEMA Asset Builder"
-  short_description: "Plan consistent characters, sets, props, and image assets."
-  default_prompt: "Use $aema-asset-builder to extract consistent visual assets from this script in dry-run mode."
+  short_description: "Cast and lock consistent characters, sets, and props."
+  default_prompt: "Use $aema-asset-builder to create face 1-5 and body A-E casting boards in dry-run mode before locking this character."

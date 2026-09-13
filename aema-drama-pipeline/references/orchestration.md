@@ -5,7 +5,7 @@
 | Stage | Leaf skill | Minimum prerequisite | Successful handoff |
 |---|---|---|---|
 | Writing | `aema-scriptwriter` | idea, brief, or source draft | approved script, canon, scene and entity IDs |
-| References | `aema-asset-builder` | approved script or explicit asset brief | locked registry and selected reference paths/IDs |
+| References | `aema-asset-builder` | approved script or explicit asset brief; casting selection for every new recurring character | locked registry and selected reference paths/IDs |
 | 3D branch | `aema-blender` | scene need plus asset/context manifests | validated plan, scene/preview/render records |
 | Element registration branch | `aema-asset-builder` in `register-existing` mode | approved local reference or Blender render | verified Element ID or manual-registration block |
 | Video | `aema-seedance25-video` | approved scenes and locked references | selected, archived clips with request metadata |
@@ -18,12 +18,13 @@ The pipeline may dry-plan a later stage using provisional inputs, but it must ma
 Use explicit review checkpoints for:
 
 1. story/canon approval;
-2. reference lock and selected images;
-3. external image generation scope;
-4. upload/Elements registration scope;
-5. video generation scope and retake budget;
-6. Blender preview versus final render;
-7. final clip selection and subtitle QC.
+2. face `1–5` and body `A–E` casting selection for each new recurring character;
+3. reference lock and selected images;
+4. external image generation scope;
+5. upload/Elements registration scope;
+6. video generation scope and retake budget;
+7. Blender preview versus final render;
+8. final clip selection and subtitle QC.
 
 The user's approval of one checkpoint does not approve later costs or mutations.
 

@@ -1,6 +1,6 @@
 ---
 name: aema-asset-builder
-description: Analyze an approved script into consistent character, environment, and prop reference packages, then prepare or execute controlled image generation and Higgsfield Elements registration. Do not use for video-shot generation.
+description: Cast recurring characters, then turn an approved script into consistent character, environment, and prop reference packages with controlled image generation and Higgsfield Elements registration. Do not use for video-shot generation.
 ---
 
 # AEMA Asset Builder
@@ -9,6 +9,9 @@ Build the locked visual references that downstream shots reuse. Begin with a dry
 
 ## Modes
 
+- `cast-plan`: prepare face board `1–5` and full-body board `A–E` for each new recurring character.
+- `cast-generate`: generate only the two approved casting boards from a reviewed plan.
+- `cast-select`: lock the user's chosen face/body pair, such as `1+E`, before character reference production.
 - `analyze`: extract and normalize visual entities from an approved script.
 - `plan`: create reference briefs, prompts, contact-sheet requirements, and a versioned generation plan.
 - `generate`: generate only the exact image items authorized from a reviewed plan.
@@ -17,11 +20,24 @@ Build the locked visual references that downstream shots reuse. Begin with a dry
 
 If the requested mode is unclear, stop after `plan`.
 
+## Casting gate for new characters
+
+For every new recurring character without an already locked identity, casting is the first visual step. Read [references/casting-board.md](references/casting-board.md) and follow this sequence:
+
+1. Analyze the approved character brief without locking appearance details that the user has not chosen.
+2. Plan one face contact sheet containing exactly five clearly separated candidates labeled `1`, `2`, `3`, `4`, `5`.
+3. Plan one full-body contact sheet containing exactly five clearly separated body/silhouette candidates labeled `A`, `B`, `C`, `D`, `E`.
+4. Keep age range, presentation, ethnicity where specified, role, genre, and overall styling compatible across both boards. Vary facial identity only on the face board; vary body build, height impression, proportions, and silhouette only on the body board.
+5. Generate the two boards only after approval of their dry-run plan. Present both boards together and stop for a user selection such as `1+E`.
+6. Record the selected pair. Only then create the character's unified reference package using the chosen face and chosen body. Do not average candidates or silently change either selection.
+
+Do not continue to final character sheets, Elements registration, or video references while casting is unselected. If the user supplies an existing locked face and body reference or explicitly asks to retain a known character, record that provenance and skip candidate generation rather than recasting them.
+
 ## Reference workflow
 
 1. Resolve duplicate names and aliases. Preserve script IDs; never merge ambiguous entities silently.
 2. Separate immutable identity anchors from wardrobe, expression, damage, weather, and other scene variants.
-3. Build a reference lock before video generation. Include portrait-safe full body, neutral identity view, expression/pose coverage, scale, color/material notes, and negative constraints only where they prevent known drift.
+3. For recurring characters, consume the locked casting pair before building the reference lock. Include portrait-safe full body, neutral identity view, expression/pose coverage, scale, color/material notes, and negative constraints only where they prevent known drift.
 4. Keep prompts provider-neutral at the canonical layer. Put provider-specific payloads in the reviewed run plan.
 5. Read [references/asset-registry.md](references/asset-registry.md) when creating or validating a registry. Use `scripts/validate_asset_registry.py` for a deterministic structural check.
 6. Follow [the canonical archive contract](../aema-drama-pipeline/references/archive-contract.md) whenever an AEMA project context is supplied.

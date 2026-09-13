@@ -22,6 +22,16 @@ Every asset entry requires:
 
 Character entries should distinguish face, hair, body/silhouette, baseline wardrobe, and scene wardrobe. Location entries should distinguish fixed geometry from time, weather, dressing, and damage variants. Prop entries should capture scale, shape, material, color, wear, and story-state changes.
 
+For a newly cast recurring character, also record `casting` with:
+
+- face board path/hash and candidates `1` through `5`;
+- body board path/hash and candidates `A` through `E`;
+- `selected_face`, `selected_body`, and combined selection such as `1+E`;
+- selection status `planned`, `generated`, `selected`, or `locked`;
+- the selection time and authorizing run, without storing unrelated conversation content.
+
+The combined character identity may become `locked` only after both selections exist. A later change from `1+E` to another combination creates a new immutable character version and stales dependent reference/video artifacts; it never overwrites the old lock.
+
 ## Prompt package
 
 For each planned image, include:
