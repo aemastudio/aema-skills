@@ -29,7 +29,7 @@ For every new recurring character without an already locked identity, casting is
 3. Plan one full-body contact sheet containing exactly five clearly separated body/silhouette candidates labeled `A`, `B`, `C`, `D`, `E`.
 4. Keep age range, presentation, ethnicity where specified, role, genre, and overall styling compatible across both boards. Vary facial identity only on the face board; vary body build, height impression, proportions, and silhouette only on the body board.
 5. Generate the two boards only after approval of their dry-run plan. Present both boards together and stop for a user selection such as `1+E`.
-6. Record the selected pair. Only then create the character's unified reference package using the chosen face and chosen body. Do not average candidates or silently change either selection.
+6. Record the selected pair. Only then create the character's unified reference package using the chosen face and chosen body. The first locked deliverable is the mandatory three-panel master sheet in [references/character-reference-sheet.md](references/character-reference-sheet.md). Do not average candidates or silently change either selection.
 
 Do not continue to final character sheets, Elements registration, or video references while casting is unselected. If the user supplies an existing locked face and body reference or explicitly asks to retain a known character, record that provenance and skip candidate generation rather than recasting them.
 
@@ -37,7 +37,7 @@ Do not continue to final character sheets, Elements registration, or video refer
 
 1. Resolve duplicate names and aliases. Preserve script IDs; never merge ambiguous entities silently.
 2. Separate immutable identity anchors from wardrobe, expression, damage, weather, and other scene variants.
-3. For recurring characters, consume the locked casting pair before building the reference lock. Include portrait-safe full body, neutral identity view, expression/pose coverage, scale, color/material notes, and negative constraints only where they prevent known drift.
+3. For recurring characters, consume the locked casting pair before building the reference lock. Generate the three-panel master sheet first; derive any additional expression/pose coverage only after that sheet is selected. Include scale, color/material notes, and negative constraints only where they prevent known drift.
 4. Keep prompts provider-neutral at the canonical layer. Put provider-specific payloads in the reviewed run plan.
 5. Read [references/asset-registry.md](references/asset-registry.md) when creating or validating a registry. Use `scripts/validate_asset_registry.py` for a deterministic structural check.
 6. Follow [the canonical archive contract](../aema-drama-pipeline/references/archive-contract.md) whenever an AEMA project context is supplied.

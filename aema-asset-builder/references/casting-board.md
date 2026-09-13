@@ -41,7 +41,7 @@ After selection:
 
 - crop or derive the chosen candidates only when the generation plan permits it;
 - create a unified identity brief that binds the exact chosen face to the exact chosen physique;
-- generate a neutral identity portrait, full-body reference, expression coverage, and required wardrobe/pose variants as a new immutable version;
+- generate the required three-panel master character sheet defined in [character-reference-sheet.md](character-reference-sheet.md) as a new immutable version before optional expression or pose variants;
 - check that the final full-body face matches the selected face and the silhouette matches the selected body;
 - keep both original casting boards and the selection record for provenance.
 
