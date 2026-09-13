@@ -18,7 +18,7 @@ Read this reference when the requested script will be produced as a short-form v
 
 ## Consistency ledger
 
-For each recurring entity, record only facts that production must preserve.
+For each recurring entity, record the facts that production must preserve. Character rows are only an index; use [character-canon.md](character-canon.md) for the full recurring-character dossier.
 
 ```text
 CHAR-001 | canonical name | aliases | age range | immutable facial markers |
