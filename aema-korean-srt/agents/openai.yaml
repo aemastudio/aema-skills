@@ -1,0 +1,4 @@
+interface:
+  display_name: "AEMA Korean SRT"
+  short_description: "Create timed Korean SRT subtitles from local media."
+  default_prompt: "Use $aema-korean-srt to create Korean SRT subtitles from this video using local transcription first."

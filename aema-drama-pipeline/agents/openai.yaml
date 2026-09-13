@@ -1,0 +1,4 @@
+interface:
+  display_name: "AEMA Drama Pipeline"
+  short_description: "Orchestrate the complete AI short-drama production flow."
+  default_prompt: "Use $aema-drama-pipeline to plan this vertical short drama from script through subtitles."

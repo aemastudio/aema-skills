@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# Generated project media and archives do not belong in this skill repository.
+*.blend1
+*.mp4
+*.mov
+*.wav
+*.srt
+runs/

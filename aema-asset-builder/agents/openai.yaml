@@ -1,0 +1,4 @@
+interface:
+  display_name: "AEMA Asset Builder"
+  short_description: "Plan consistent characters, sets, props, and image assets."
+  default_prompt: "Use $aema-asset-builder to extract consistent visual assets from this script in dry-run mode."

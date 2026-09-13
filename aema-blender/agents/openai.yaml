@@ -1,0 +1,4 @@
+interface:
+  display_name: "AEMA Blender"
+  short_description: "Plan and automate Blender scenes for vertical drama assets."
+  default_prompt: "Use $aema-blender to build a dry-run Blender scene plan for this 9:16 shot."

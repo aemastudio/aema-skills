@@ -1,0 +1,4 @@
+interface:
+  display_name: "AEMA Seedance 2.5 Video"
+  short_description: "Plan Seedance 2.5 shots and controlled video generation."
+  default_prompt: "Use $aema-seedance25-video to turn this scene into 9:16 shot prompts in dry-run mode."

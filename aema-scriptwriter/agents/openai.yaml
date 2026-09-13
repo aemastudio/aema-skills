@@ -1,0 +1,4 @@
+interface:
+  display_name: "AEMA Scriptwriter"
+  short_description: "Turn an idea into a production-ready drama script."
+  default_prompt: "Use $aema-scriptwriter to develop this idea into a Korean vertical short-drama script."
