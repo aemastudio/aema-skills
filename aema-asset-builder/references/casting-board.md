@@ -2,47 +2,46 @@
 
 Use this contract before producing final references for a new recurring character.
 
-## Board 1: face candidates
+## Single four-candidate board
 
-Create one contact sheet with five equal, clearly separated cells labeled `1`, `2`, `3`, `4`, `5`. Each cell shows a different facial identity under the same neutral conditions:
+Create exactly one `16:9` landscape casting board containing four equal, clearly separated cells labeled `1`, `2`, `3`, `4`. Each cell shows one different candidate as a photorealistic front-facing full-body studio photograph:
 
-- head-and-shoulders or tight portrait, straight-on;
-- neutral expression, unobstructed face, consistent focal length and lighting;
-- same stated age range, presentation, role-compatible styling, hair treatment, and realism/style family;
-- no hats, sunglasses, dramatic makeup, extreme expressions, or pose changes that prevent fair comparison.
+- head, hands, legs, and shoes fully visible with no cropping;
+- neutral standing pose, arms relaxed, no crossed limbs or props;
+- same camera height, distance, focal-length family, lighting, background, and approximate scale;
+- a genuinely different facial identity in every cell, not one face with changed hair or makeup;
+- age range, presentation, ethnicity where specified, role, genre, and overall realism compatible with the same canon description;
+- meaningful variation in face shape, features, hairstyle, physique, height impression, proportions, posture, and silhouette;
+- role-appropriate wardrobe that does not hide the physique or create an unfairly more attractive candidate;
+- labels placed outside the body and kept readable.
 
-Vary facial structure and distinctive identity traits enough to make the five choices meaningfully different. The label must be outside the face and remain readable. Do not generate five separate deliverables when the requested review artifact is one board.
+The board is for choosing a whole actor—face and body together. Do not split face and body into separate boards. Do not show close-ups, back views, side views, multiple poses per candidate, or more or fewer than four people.
 
-## Board 2: body candidates
 
-Create one contact sheet with five equal, clearly separated cells labeled `A`, `B`, `C`, `D`, `E`. Each cell shows a different full-body build and silhouette under comparable conditions:
+## Character description before generation
 
-- front-facing neutral stance, head-to-toe visible, no cropping;
-- simple fitted neutral clothing that reveals silhouette without sexualization;
-- same camera height, distance, lighting, background, and approximate scale guide;
-- vary height impression, shoulder/hip relationship, build, limb proportions, posture, and overall silhouette.
+Always present the canon character description with the dry-run plan before generating candidates. It must explain the character's age, dramatic function, temperament, family resemblance requirements, physique, distinctive visual traits, and wardrobe context. Design all four faces to fit this description while remaining visibly different from one another and from already selected cast members.
 
-The body board is for physique selection, not a second face audition. Use a neutral/de-emphasized provisional face and do not treat it as identity. Preserve role, age range, accessibility needs, and user-specified physical constraints.
+If a reference image is supplied, state whether it is an identity anchor or only directional inspiration. A directional reference must not cause four near-duplicate faces. An identity anchor means casting is already locked and candidate generation should be skipped unless the user explicitly asks to recast.
 
 ## Generation plan
 
-The dry-run plan lists exactly two image outputs per character:
+The dry-run plan lists exactly one image output per character:
 
-1. `CHAR-...__casting-face-1-5__v...`
-2. `CHAR-...__casting-body-A-E__v...`
+`CHAR-...__casting-candidates-1-4__v...`
 
-Record provider/model, board dimensions, layout, labels, estimated cost or `unknown`, output paths, and retry limit. Both boards are candidates, not locked references. A failed label or cropped body requires a proposed retake and new approval; do not pay for an automatic retry.
+Record provider/model, `16:9` dimensions, four-cell layout, labels, reference roles, estimated cost or `unknown`, output path, and retry limit. The board remains a candidate artifact. A missing person, duplicated face, unreadable label, cropped body, inconsistent framing, or extra view requires a proposed retake and new approval; do not pay for an automatic retry.
 
 ## Selection and lock
 
-Present both boards together and ask for one face number plus one body letter. Accept compact forms such as `1E`, `1+E`, or `얼굴 1 / 몸 E`, normalize the stored value to `1+E`, and echo it back before producing final references.
+Present the board and ask for one number. Accept forms such as `3`, `3번`, or `후보 3`, normalize the stored selection to `3`, and echo it back before producing final references.
 
 After selection:
 
-- crop or derive the chosen candidates only when the generation plan permits it;
-- create a unified identity brief that binds the exact chosen face to the exact chosen physique;
-- generate the required three-panel master character sheet defined in [character-reference-sheet.md](character-reference-sheet.md) as a new immutable version before optional expression or pose variants;
-- check that the final full-body face matches the selected face and the silhouette matches the selected body;
-- keep both original casting boards and the selection record for provenance.
+- crop or derive the chosen candidate only when the approved plan permits it;
+- create a unified identity brief binding that exact face and physique;
+- generate the required three-panel master character sheet defined in [character-reference-sheet.md](character-reference-sheet.md) as a new immutable version;
+- verify that the master sheet matches both the selected face and selected silhouette;
+- retain the original four-candidate board and selection record for provenance.
 
-Do not infer a choice from praise, cursor position, or an ambiguous statement. If only one axis is selected, keep the other axis pending.
+Do not infer a choice from praise, cursor position, or an ambiguous statement.

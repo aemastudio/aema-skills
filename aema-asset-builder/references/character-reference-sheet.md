@@ -1,6 +1,6 @@
 # AEMA Three-Panel Character Reference Sheet
 
-After the user selects a casting pair such as `1+E`, create exactly one `16:9` landscape master character-reference image with three fixed panels. This is the first locked character artifact and the source reference for later images, Elements, Blender, and video shots. The project's delivery video may remain `9:16`; the master reference sheet itself is always `16:9`.
+After the user selects one casting candidate such as `3번`, create exactly one `16:9` landscape master character-reference image with three fixed panels. This is the first locked character artifact and the source reference for later images, Elements, Blender, and video shots. The project's delivery video may remain `9:16`; the master reference sheet itself is always `16:9`.
 
 ## Fixed left-to-right layout
 
@@ -36,7 +36,29 @@ The canvas aspect ratio is `16:9`, with three vertical panels arranged left to r
 
 ## Output and QC
 
-Use an immutable item ID such as `CHAR-001__master-reference-3panel__v001`. Store the casting selection (`1+E`), face-board hash, body-board hash, prompt/plan/run IDs, output hash, and selected status.
+Use an immutable item ID such as `CHAR-001__master-reference-3panel__v001`. Store the selected candidate number, casting-board hash, prompt/plan/run IDs, output hash, and selected status. For a legacy archive, preserve its earlier face/body selection provenance without rewriting it.
+
+## Final ensemble HTML board
+
+After individual identities are selected, the user may request one board to judge the cast as an ensemble. This is a review view of existing character references, not a new casting image and not a replacement for the three-panel master sheets.
+
+Build it with `scripts/build_final_cast_review.py`; do not hand-author the HTML. Supply one manifest item per final character with:
+
+- `name`, `role`, and a concise canon-based `description`;
+- the exact selected existing `image` path and its selection status;
+- optional `casting_note` explaining why the current choice fits or what should be reconsidered.
+
+The board must:
+
+- place the existing character image on the left and the character introduction on the right;
+- preserve manifest order and show every named character exactly once;
+- embed image bytes into the HTML by default so moving or opening the file cannot break relative paths;
+- offer the uncropped full image in a click-to-expand lightbox while using a readable preview crop in the card;
+- identify missing files visibly and fail validation instead of silently producing empty cards;
+- contain no generated substitutes, face edits, wardrobe edits, or inferred recasting;
+- save as a versioned HTML review artifact under the project's reference or export area.
+
+If the user rejects a cast member from this board, return only that character to the appropriate casting/reference workflow. Keep the ensemble board as review provenance and create a new version after the replacement is selected.
 
 Reject or propose a new approved take when:
 

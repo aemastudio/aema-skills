@@ -1,4 +1,4 @@
 interface:
   display_name: "AEMA Asset Builder"
   short_description: "Cast and lock consistent characters, sets, and props."
-  default_prompt: "Use $aema-asset-builder to create face 1-5 and body A-E casting boards in dry-run mode before locking this character."
+  default_prompt: "Use $aema-asset-builder to create one 16:9 board with four full-body casting candidates in dry-run mode before locking this character."

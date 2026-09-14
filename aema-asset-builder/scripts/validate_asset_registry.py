@@ -68,17 +68,24 @@ def main() -> int:
                     continue
                 if casting.get("status") not in VALID_CASTING_STATUS:
                     errors.append(f"{where}.casting.status must be one of {sorted(VALID_CASTING_STATUS)}")
+                selected_candidate = casting.get("selected_candidate")
                 selected_face = casting.get("selected_face")
                 selected_body = casting.get("selected_body")
-                if selected_face is not None and selected_face not in {"1", "2", "3", "4", "5"}:
-                    errors.append(f"{where}.casting.selected_face must be 1-5")
-                if selected_body is not None and selected_body not in {"A", "B", "C", "D", "E"}:
-                    errors.append(f"{where}.casting.selected_body must be A-E")
-                combined = casting.get("selection")
-                if selected_face is not None and selected_body is not None and combined != f"{selected_face}+{selected_body}":
-                    errors.append(f"{where}.casting.selection must match selected_face+selected_body")
-                if casting.get("status") in {"selected", "locked"} and (selected_face is None or selected_body is None):
-                    errors.append(f"{where}.casting requires both selections when selected or locked")
+                has_legacy_selection = selected_face is not None or selected_body is not None
+                if selected_candidate is not None and selected_candidate not in {"1", "2", "3", "4"}:
+                    errors.append(f"{where}.casting.selected_candidate must be 1-4")
+                if selected_candidate is not None and has_legacy_selection:
+                    errors.append(f"{where}.casting must not mix selected_candidate with legacy face/body fields")
+                if has_legacy_selection:
+                    if selected_face not in {"1", "2", "3", "4", "5"}:
+                        errors.append(f"{where}.casting.selected_face must be 1-5 for a legacy record")
+                    if selected_body not in {"A", "B", "C", "D", "E"}:
+                        errors.append(f"{where}.casting.selected_body must be A-E for a legacy record")
+                    combined = casting.get("selection")
+                    if combined != f"{selected_face}+{selected_body}":
+                        errors.append(f"{where}.casting.selection must match legacy selected_face+selected_body")
+                if casting.get("status") in {"selected", "locked"} and selected_candidate is None and not has_legacy_selection:
+                    errors.append(f"{where}.casting requires selected_candidate when selected or locked")
 
     if errors:
         for error in errors:

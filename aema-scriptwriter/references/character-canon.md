@@ -42,7 +42,7 @@ Avoid vague shorthand such as “handsome,” “pretty,” “ordinary,” or �
 Separate the appearance dossier into three classes:
 
 - `story-locked`: cannot change without affecting plot, identity, representation, continuity, or user intent;
-- `casting-flexible`: should vary across the face `1–5` or body `A–E` candidates so the user has meaningful choices;
+- `casting-flexible`: should vary across the four full-body candidates `1–4` so the user has meaningful whole-character choices;
 - `scene-variant`: wardrobe, grooming, injury, fatigue, weather, age-state, or other changes tied to named scenes.
 
 Detailed description does not mean every feature is already selected. When the user has not fixed a feature, describe the intended range and label it `casting-flexible`. The asset builder must preserve story-locked traits while varying only flexible traits.

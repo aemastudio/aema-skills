@@ -18,7 +18,7 @@ The pipeline may dry-plan a later stage using provisional inputs, but it must ma
 Use explicit review checkpoints for:
 
 1. story/canon approval;
-2. face `1–5` and body `A–E` casting selection for each new recurring character;
+2. one selected candidate from the `16:9` full-body casting board `1–4` for each new recurring character;
 3. reference lock and selected images;
 4. external image generation scope;
 5. upload/Elements registration scope;

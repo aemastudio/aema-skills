@@ -24,13 +24,14 @@ Character entries should distinguish face, hair, body/silhouette, baseline wardr
 
 For a newly cast recurring character, also record `casting` with:
 
-- face board path/hash and candidates `1` through `5`;
-- body board path/hash and candidates `A` through `E`;
-- `selected_face`, `selected_body`, and combined selection such as `1+E`;
+- one `16:9` casting-board path/hash and candidates `1` through `4`;
+- `selected_candidate` containing the chosen number;
 - selection status `planned`, `generated`, `selected`, or `locked`;
 - the selection time and authorizing run, without storing unrelated conversation content.
 
-The combined character identity may become `locked` only after both selections exist. A later change from `1+E` to another combination creates a new immutable character version and stales dependent reference/video artifacts; it never overwrites the old lock.
+The character identity may become `locked` only after one candidate is explicitly selected. A later change to another candidate creates a new immutable character version and stales dependent reference/video artifacts; it never overwrites the old lock.
+
+Existing archives using the earlier `selected_face` plus `selected_body` representation remain readable as legacy provenance. Do not rewrite an old selection merely to migrate its field names. New casting records use `selected_candidate`.
 
 The first locked `reference_artifacts` entry for a cast character is the `16:9` three-panel master sheet defined in [character-reference-sheet.md](character-reference-sheet.md). Record its role as `master-reference-3panel` and do not mark the character reference lock complete until that artifact passes layout and cross-panel consistency QC. This is an explicit exception to the project's default `9:16` delivery framing.
 
